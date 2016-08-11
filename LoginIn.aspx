@@ -16,7 +16,6 @@
     <link href="./BJUI/themes/css/bootstrap.css" rel="stylesheet"/>
     <style>
         html, body, form {
-            background-size:cover;
             height:100%;
             width:100%;
             margin: 0;
@@ -54,7 +53,7 @@
         }
     </style>
 </head>
-<body style="background:url(/image/Background_0.jpg) center no-repeat">
+<body style="background:url(/image/Background_0.jpg);background-position:0px 0px;background-size:100% 100%;">
     <form id="LoginForm" runat="server" >
         <div id="loginArea" style="padding:30px;text-align:center;margin-top:5%;" aria-selected="undefined">
             <h1 id = "HeadStyle">欢迎访问：3D元素周期表<br /><br /></h1>
@@ -85,7 +84,9 @@
         var WallpaperIndex = 0;
         function changeWallpaper()
         {
-            document.body.style.background = "url(./image/background_" + WallpaperIndex + ".jpg) no-repeat center";
+            document.body.style.background = "url(./image/background_" + WallpaperIndex + ".jpg)";
+            document.body.style.backgroundPosition = "0px 0px";
+            document.body.style.backgroundSize = "100% 100%";
             WallpaperIndex = (WallpaperIndex == 7) ? 0 : WallpaperIndex + 1;
         }
     </script>
