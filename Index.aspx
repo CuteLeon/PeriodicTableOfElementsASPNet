@@ -47,7 +47,9 @@
 			<div class="CustomButton" id="sphere">球体</div>
 			<div class="CustomButton" id="helix">螺旋</div>
 			<div class="CustomButton" id="grid">网格</div>
-            <div class="CustomButton" id="ColorPickerButton" onclick="onColorPicker();">颜色</div>
+            <div class="CustomButton" id="ColorPickerButton" onclick="onColorPicker();">主题颜色</div>
+            <div class="CustomButton" id="JPGBackgroundImage" onclick="onJPGBackgroundImage();">静态背景</div>
+            <div class="CustomButton" id="GIFBackgroundImage" onclick="onGIFBackgroundImage();">动态背景</div>
 		</div>
 		<div id="elementdetailPanel"><!--右侧详情面板-->
 			<div id="elementImage" style="background:url(image/Shield.png) no-repeat center"></div>
@@ -197,11 +199,9 @@
 
             //3D场景的事件监听，对元素的事件冒泡到这里统一处理，节约性能
             renderer.domElement.addEventListener('click', onDocumentClick, true);
-            //为3D场景设置背景图
-            renderer.domElement.style.backgroundImage = "url(Image/RendererBackground.jpg)";
-            renderer.domElement.style.backgroundSize = "100% 100%";//拉伸图像尺寸
             //对3D场景的所有操作都可以对 [renderer.domElement.style] 实现
-            
+            onJPGBackgroundImage();//初始设置静态背景
+
             controls = new THREE.TrackballControls(camera, renderer.domElement);
             controls.rotateSpeed = 0.5;
             //相机的最小距离和最大距离
@@ -311,6 +311,20 @@
                     Element[i].style.backgroundColor = "rgba(" + parseInt(Color.substr(1, 2), 16) + "," + parseInt(Color.substr(3, 2), 16) + "," + parseInt(Color.substr(5, 2), 16) + ",0.25)";
                 }
             }
+        }
+
+        function onJPGBackgroundImage()
+        {
+            renderer.domElement.style.backgroundImage = "url(Image/RendererBackground.jpg)";
+            renderer.domElement.style.backgroundRepeat = "no-repeat";
+            renderer.domElement.style.backgroundSize = "100% 100%";
+        }
+
+        function onGIFBackgroundImage()
+        {
+            renderer.domElement.style.backgroundImage = "url(Image/RendererBackground.gif)";
+            renderer.domElement.style.backgroundRepeat = "repeat";
+            renderer.domElement.style.backgroundSize = "auto";
         }
     </script>
 </body>
