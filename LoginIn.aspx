@@ -29,9 +29,6 @@
 	        text-shadow:2px 2px 15px black;
 	        color:#7fffff;
         }
-        #loginArea {
-
-        }
         .LableStyle
         {
             font-family:"微软雅黑";
@@ -55,9 +52,8 @@
 </head>
 <body style="background:url(/image/Background_0.jpg);background-position:0px 0px;background-size:100% 100%;">
     <form id="LoginForm" runat="server" >
-        <div id="loginArea" style="padding:30px;text-align:center;margin-top:5%;" aria-selected="undefined">
-            <h1 id = "HeadStyle">欢迎访问：3D元素周期表<br /><br /></h1>
-            
+        <div id="loginArea" style="position:center ;top:30%;padding:30px;text-align:center;margin-top:5%;" aria-selected="undefined">
+            <h1 id = "HeadStyle">欢迎访问：3D元素周期表</h1><br /><br /><br /><br /><br /><br /><br /><br />
             <asp:Label CssClass="LableStyle" Style="text-align:right" Width="130px" runat="server" Text="请输入用户名：" ></asp:Label>
             <asp:TextBox ID="UserNameText" runat="server" Text="Leon." Width="240px" style="display:table-column-group;"></asp:TextBox>
             <br /><br />
